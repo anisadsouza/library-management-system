@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home • LMS</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+  <!-- background orbs -->
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <!-- topbar -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div>
+        <div class="brand-title">Library Management System</div>
+        <div class="brand-sub">Browse • Save • Manage</div>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-btn" href="{% url 'home2' %}">Home</a>
+        <a class="nav-btn" href="{% url 'books' %}">Books</a>
+        <a class="nav-btn" href="{% url 'authors' %}">Authors</a>
+        <a class="nav-btn" href="{% url 'my_cart' %}">My Books</a>
+        <a class="nav-btn outline" href="{% url 'logout' %}">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- page -->
+  <main class="container page">
+    <section class="hero">
+      <div class="hero-card">
+        <h1 class="hero-title">
+          Hi, {{ request.user.username }} 👋
+        </h1>
+        <p class="hero-text">
+          What would you like to do?
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn" href="{% url 'books' %}">Browse Categories</a>
+          <a class="btn ghost" href="{% url 'my_cart' %}">Open My Books</a>
+          <a class="btn outline" href="{% url 'authors' %}">View Authors</a>
+        </div>
+
+        <!-- optional: small hint line (not messy / not extra blocks) -->
+        <p class="muted" style="margin-top:14px;">
+          Tip: Add books from any category and they’ll appear in “My Books”.
+        </p>
+      </div>
+
+      <aside class="side-card">
+        <div class="side-title">Quick actions</div>
+
+        <div class="row-gap" style="margin-top:14px;">
+          <a class="btn full small" href="{% url 'books' %}">Explore Books</a>
+          <a class="btn full small ghost" href="{% url 'authors' %}">Meet Authors</a>
+          <a class="btn full small outline" href="{% url 'my_cart' %}">My Books</a>
+          <a class="btn full small danger" href="{% url 'logout' %}">Logout</a>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">© LMS • Built with Django</div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Login • LMS{% endblock %}
+
+{% block content %}
+<section class="page narrow">
+  <div class="card form-card">
+    <h1>Login</h1>
+    <p class="muted">Enter your username and password.</p>
+
+    <form method="POST" class="form">
+      {% csrf_token %}
+      <label>Username</label>
+      <input type="text" name="username" placeholder="Enter username" required>
+
+      <label>Password</label>
+      <input type="password" name="password" placeholder="Enter password" required>
+
+      <button class="btn full" type="submit">Login</button>
+    </form>
+
+    <div class="muted small-text">
+      Don’t have an account? <a class="link" href="{% url 'register' %}">Register</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

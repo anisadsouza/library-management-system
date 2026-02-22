@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}My Books • LMS{% endblock %}
+
+{% block content %}
+<section class="page">
+  <div class="page-head row">
+    <div>
+      <h1>My Books</h1>
+      <p class="muted">Your saved list.</p>
+    </div>
+    <a class="btn ghost" href="{% url 'books' %}">+ Add More</a>
+  </div>
+
+  {% if cart_items %}
+    <div class="grid">
+      {% for item in cart_items %}
+        <div class="card book-card">
+          <div class="card-title">{{ item.book.title }}</div>
+          <div class="pill">{{ item.book.book_type }}</div>
+          <div class="price">₹ {{ item.book.price }}</div>
+          <a class="btn danger small" href="{% url 'remove_from_cart' item.id %}">Remove</a>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="total-bar">
+      <div class="total-left">
+        <div class="muted">Total</div>
+        <div class="total-amt">₹ {{ total }}</div>
+      </div>
+      <div class="muted small-text">Tip: you can add more from Books page.</div>
+    </div>
+  {% else %}
+    <div class="empty">
+      <h2>Your list is empty</h2>
+      <p class="muted">Go to Books → choose a category → Add to My Books.</p>
+      <a class="btn" href="{% url 'books' %}">Browse Books</a>
+    </div>
+  {% endif %}
+</section>
+{% endblock %}

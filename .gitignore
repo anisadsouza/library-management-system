@@ -1,0 +1,77 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual env
+.venv/
+venv/
+env/
+
+# Django
+db.sqlite3
+*.log
+local_settings.py
+
+# Django static/media build (if you later use collectstatic / uploads)
+staticfiles/
+media/
+
+# Migrations cache
+**/migrations/__pycache__/
+
+# OS / Editor
+.DS_Store
+.vscode/
+.idea/
+
+# Env files
+.env
+.env.*
+
+__pycache__/
+*.pyc
+
+# -----------------------
+# Python
+# -----------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.py[cod]
+*$py.class
+
+# -----------------------
+# Virtual Environment
+# -----------------------
+.venv/
+venv/
+env/
+
+# -----------------------
+# Django
+# -----------------------
+db.sqlite3
+*.log
+local_settings.py
+
+# Static / media build
+staticfiles/
+media/
+
+# Migrations cache only (NOT migration files)
+**/migrations/__pycache__/
+
+# -----------------------
+# Environment variables
+# -----------------------
+.env
+.env.*
+
+# -----------------------
+# OS / Editor
+# -----------------------
+.DS_Store
+.vscode/
+.idea/

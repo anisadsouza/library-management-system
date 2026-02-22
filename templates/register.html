@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Register • LMS{% endblock %}
+
+{% block content %}
+<section class="page narrow">
+  <div class="card form-card">
+    <h1>Register</h1>
+    <p class="muted">Create your account.</p>
+
+    <form method="POST" class="form">
+      {% csrf_token %}
+      <label>Username</label>
+      <input type="text" name="username" placeholder="Choose a username" required>
+
+      <label>Password</label>
+      <input type="password" name="password" placeholder="Create password" required>
+
+      <label>Confirm Password</label>
+      <input type="password" name="confirm_password" placeholder="Re-enter password" required>
+
+      <button class="btn full" type="submit">Create Account</button>
+    </form>
+
+    <div class="muted small-text">
+      Already have an account? <a class="link" href="{% url 'login' %}">Login</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

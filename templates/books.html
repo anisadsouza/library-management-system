@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Books • LMS{% endblock %}
+
+{% block content %}
+<section class="page">
+  <div class="page-head">
+    <h1>Types of Books</h1>
+    <p class="muted">Choose a category to see available books.</p>
+  </div>
+
+  <div class="grid">
+    {% for c in categories %}
+      <a class="card category-card" href="{% url 'all_books' c %}">
+        <div class="badge">Category</div>
+        <div class="card-title">{{ c }}</div>
+        <div class="card-sub">View books →</div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
