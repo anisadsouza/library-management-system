@@ -194,9 +194,9 @@ This project demonstrates:
 
 ## 👩‍💻 Author
 
-**Anisa D'souza**\
+**Anisa D'souza**
 
-**Sharavi Shinde**\
+**Sharavi Shinde**
 
 ------------------------------------------------------------------------
 
